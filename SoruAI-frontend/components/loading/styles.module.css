@@ -1,0 +1,67 @@
+.loadingWrapper {
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Small Phones (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .loading {
+    width: 30px;
+    height: 30px;
+    /* border-width: 1.7px; */
+  }
+}
+
+/* Phones (481px - 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .loading {
+    width: 30px;
+    height: 30px;
+    /* border-width: 1.9px; */
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .loading {
+    width: 36px;
+    height: 36px;
+    /* border-width: 2.1px; */
+  }
+}
+
+/* Small Laptops (1025px - 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .loading {
+    width: 38px;
+    height: 38px;
+    /* border-width: 3px; */
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,101 @@
+.summary {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .summary p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .examCompletedButtons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .buttonPrimary, .buttonSecondary {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .buttonPrimary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .buttonPrimary:hover {
+    background-color: #0069d9;
+  }
+  
+  .buttonSecondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .buttonSecondary:hover {
+    background-color: #5a6268;
+  }
+  
+  .buttonSecondary:disabled, .buttonPrimary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .returnButton {
+    background-color: #6c757d;
+  }
+  
+  .returnButton:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Responsive düzenlemeler */
+  @media (max-width: 768px) {
+    .examCompletedButtons {
+      flex-direction: column;
+    }
+    
+    .examCompletedButtons button {
+      width: 100%;
+    }
+    
+    .buttonPrimary, .buttonSecondary {
+      font-size: 0.9rem;
+    }
+    
+    .summary p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .summary {
+      padding: 15px;
+    }
+    
+    .buttonPrimary, .buttonSecondary {
+      font-size: 0.85rem;
+      padding: 8px 16px;
+    }
+    
+    .summary p {
+      font-size: 0.9rem;
+      margin: 8px 0;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .buttonPrimary, .buttonSecondary {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  }

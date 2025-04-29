@@ -1,0 +1,101 @@
+.questionNav {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    order: -1; /* Ensures it appears before the question on mobile */
+  }
+  
+  .questionNav h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  .questionNavBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .questionBox {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: white;
+  }
+  
+  .questionBox:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+  
+  .currentQuestion {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .answeredQuestion {
+    border-color: #28a745;
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .currentQuestion.answeredQuestion {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Responsive düzenlemeler */
+  @media (min-width: 992px) {
+    .questionNav {
+      width: 200px;
+      position: fixed;
+      right: 20px;
+      top: 100px;
+      margin-bottom: 0;
+      order: initial;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .questionBox {
+      width: 32px;
+      height: 32px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .questionBox {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
+    
+    .questionNavBoxes {
+      gap: 6px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .questionBox {
+      width: 24px;
+      height: 24px;
+      font-size: 11px;
+    }
+  }

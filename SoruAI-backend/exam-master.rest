@@ -1,0 +1,53 @@
+
+### Register a user POST /AUTH/REGISTER
+POST http://localhost:5003/auth/register
+Content-Type: application/json
+
+{
+    "userName": "by17",
+    "firstName": "burak",
+    "lastName": "yilmaz",
+    "password": "by123"
+}
+
+### Login a user POST /AUTH/LOGIN
+POST http://localhost:5003/auth/login
+Content-Type: application/json
+
+{
+    "userName": "burak_yilmaz",
+    "password": "123123"
+}
+
+
+### Get all exams GET /exams/
+GET http://localhost:5003/exams/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTc0NDUzNDk4NywiZXhwIjoxNzQ0NjIxMzg3fQ.62OvUcJRyoV8MjEY8HXhw2gTMzqN5qg98ODI64pBCC0
+
+### POST /exams/submit-answers
+POST http://localhost:5003/exams/submit-answers
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTc0NDQ0NzQ5NiwiZXhwIjoxNzQ0NTMzODk2fQ.sRqTyROiJy8qSDuy9wsx1hEcuONNCKj3bM8qvB7G84Q
+
+{
+  "examId": 7,
+  "answers": [
+    { "questionId": 4, "selectedAnswer": "A", "isCorrect": false },
+    { "questionId": 9, "selectedAnswer": "C", "isCorrect": true },
+    { "questionId": 12, "selectedAnswer": "B", "isCorrect": true }
+  ]
+}
+
+### Get questions of the exam GET /exams/:examId
+GET http://localhost:5003/exams/8
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJCdXJhayIsImlhdCI6MTc0NTIzNTkxMywiZXhwIjoxNzQ1MzIyMzEzfQ.7alDGCVIesREt8JA8HpwYdg8jHBQL5cDGXlGJXkTw1Y
+
+### Verify a token
+POST http://localhost:5003/auth/verify-token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsIm5hbWUiOiJCdXJhayIsImlhdCI6MTc0NTIzNTkxMywiZXhwIjoxNzQ1MzIyMzEzfQ.7alDGCVIesREt8JA8HpwYdg8jHBQL5cDGXlGJXkTw1Y"
+}

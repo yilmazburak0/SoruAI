@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model exams {
+  id              Int               @id @default(autoincrement())
+  title           String            @db.VarChar(100)
+  questions       questions[]
+  student_answers student_answers[]
+  student_exams   student_exams[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model questions {
+  id                   Int               @id @default(autoincrement())
+  exam_id              Int?
+  topic                topic_enum
+  difficulty_level     String?           @db.VarChar(10)
+  question_text        String?
+  option_a             String
+  option_b             String
+  option_c             String
+  option_d             String
+  option_e             String
+  correct_answer       String?           @db.Char(1)
+  solution_explanation String
+  question_stem        String            @default("")
+  exams                exams?            @relation(fields: [exam_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  student_answers      student_answers[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model student_answers {
+  id              Int        @id @default(autoincrement())
+  student_id      Int?
+  exam_id         Int?
+  question_id     Int?
+  selected_answer String?    @db.Char(1)
+  is_correct      Boolean?
+  exams           exams?     @relation(fields: [exam_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  questions       questions? @relation(fields: [question_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  students        students?  @relation(fields: [student_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model student_exams {
+  id            Int       @id @default(autoincrement())
+  student_id    Int?
+  exam_id       Int?
+  correct_count Int?      @default(0)
+  wrong_count   Int?      @default(0)
+  exams         exams?    @relation(fields: [exam_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  students      students? @relation(fields: [student_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model students {
+  id              Int               @id @default(autoincrement())
+  first_name      String            @db.VarChar(50)
+  last_name       String            @db.VarChar(50)
+  password_hash   String
+  user_name       String            @unique @db.VarChar(50)
+  student_answers student_answers[]
+  student_exams   student_exams[]
+}
+
+enum topic_enum {
+  C_mlede_Anlam        @map("Cümlede Anlam")
+  S_zc_kte_Anlam       @map("Sözcükte Anlam")
+  Dil_Bilgisi          @map("Dil Bilgisi")
+  Noktalama___aretleri @map("Noktalama İşaretleri")
+  Paragrafta_Anlam     @map("Paragrafta Anlam")
+  Ses_Bilgisi          @map("Ses Bilgisi")
+  Yaz_m_Kurallar_      @map("Yazım Kuralları")
+}

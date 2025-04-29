@@ -1,0 +1,444 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.buttonPrimary {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.buttonPrimary:hover {
+  background-color: #2980b9;
+}
+
+.examSummary {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.statLabel {
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.questionsList {
+  margin-bottom: 2rem;
+}
+
+.questionItem {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.correct {
+  border-left: 5px solid #2ecc71;
+}
+
+.incorrect {
+  border-left: 5px solid #e74c3c;
+}
+
+.unanswered {
+  border-left: 5px solid #f39c12;
+}
+
+.questionStem {
+  margin: 1rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.optionItem {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.selectedOption {
+  border: 2px solid #3498db;
+}
+
+.correctOption {
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.optionKey {
+  font-weight: 600;
+  margin-right: 1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.optionText {
+  flex: 1;
+}
+
+.answerStatus {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.correctText {
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.incorrectText {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.unansweredText {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.sectionTitle {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.questionTitle {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.solutionContainer {
+  margin-top: 1.5rem;
+  border-top: 1px dashed #ddd;
+  padding-top: 1rem;
+}
+
+.solutionToggle {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.solutionToggle:hover {
+  background-color: #e0e0e0;
+}
+
+.solutionToggle:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: 8px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #555;
+  transition: transform 0.2s;
+}
+
+.solutionToggle:hover:before {
+  transform: rotate(180deg);
+}
+
+.solutionText {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.solutionText p {
+  margin: 0.8rem 0;
+}
+
+.solutionText p:first-child {
+  margin-top: 0;
+}
+
+.solutionText p:last-child {
+  margin-bottom: 0;
+}
+
+/* Add these new styles for pagination */
+
+.paginationHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.paginationButton {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.paginationButton:not(.disabled):hover {
+  background-color: #e0e0e0;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1; /* Allow this to take available space */
+  min-width: 0; /* Allow this to shrink below content size */
+  padding: 0 0.5rem; /* Add some space between buttons and numbers */
+}
+
+.pageNumber {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.pageNumber:hover:not(.activePage) {
+  background-color: #e0e0e0;
+}
+
+.activePage {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+/* Add this to ensure good spacing before bottom pagination */
+.questionsList {
+  position: relative;
+}
+
+.questionMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #f1f1f1;
+  color: #555;
+}
+
+.topicTag {
+  background-color: rgba(52, 152, 219, 0.15);
+  color: #2980b9;
+}
+
+.difficulty-kolay {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #27ae60;
+}
+
+.difficulty-orta {
+  background-color: rgba(243, 156, 18, 0.15);
+  color: #d35400;
+}
+
+.difficulty-zor {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: #c0392b;
+}
+
+/* Add these responsive styles to your existing CSS */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .pageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .examSummary {
+    padding: 1rem;
+  }
+  
+  .statsContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .statItem {
+    padding: 0.75rem;
+  }
+  
+  .statValue {
+    font-size: 1.25rem;
+  }
+  
+  .questionItem {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .questionTitle {
+    font-size: 1rem;
+  }
+  
+  .optionsContainer {
+    gap: 0.5rem;
+  }
+  
+  .optionItem {
+    padding: 0.5rem;
+  }
+  
+  .buttonPrimary {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+  
+  .solutionText {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .optionKey {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  .optionText {
+    font-size: 0.9rem;
+  }
+  
+  .pageNumbers {
+    max-width: 180px;
+    gap: 0.15rem;
+  }
+  
+  .pageNumber {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .paginationButton {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}

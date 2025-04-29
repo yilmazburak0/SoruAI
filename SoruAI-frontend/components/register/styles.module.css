@@ -1,0 +1,224 @@
+.summary {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.summary p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.examCompletedButtons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.buttonPrimary, .buttonSecondary {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.buttonPrimary {
+  background-color: #007bff;
+  color: white;
+}
+
+.buttonPrimary:hover {
+  background-color: #0069d9;
+}
+
+.buttonSecondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.buttonSecondary:hover {
+  background-color: #5a6268;
+}
+
+.buttonSecondary:disabled, .buttonPrimary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.returnButton {
+  background-color: #6c757d;
+}
+
+.returnButton:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+  .examCompletedButtons {
+    flex-direction: column;
+  }
+  
+  .examCompletedButtons button {
+    width: 100%;
+  }
+  
+  .buttonPrimary, .buttonSecondary {
+    font-size: 0.9rem;
+  }
+  
+  .summary p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary {
+    padding: 15px;
+  }
+  
+  .buttonPrimary, .buttonSecondary {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+  
+  .summary p {
+    font-size: 0.9rem;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .buttonPrimary, .buttonSecondary {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+.formWrapper {
+width: 100%;
+max-width: 420px;
+padding: 2rem;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 1.5rem;
+text-align: center;
+}
+
+.form {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.inputGroup {
+display: flex;
+flex-direction: column;
+gap: 0.25rem;
+}
+
+.inputGroup label {
+font-size: 0.875rem;
+font-weight: 500;
+}
+
+.inputGroup input {
+padding: 0.5rem;
+border: 1px solid #e2e8f0;
+border-radius: 4px;
+font-size: 1rem;
+}
+
+.submitButton {
+margin-top: 1rem;
+padding: 0.5rem;
+background-color: #3182ce;
+color: white;
+border: none;
+border-radius: 4px;
+font-size: 1rem;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+background-color: #2c5282;
+}
+
+.submitButton:disabled {
+background-color: #a0aec0;
+cursor: not-allowed;
+}
+
+.error {
+padding: 0.5rem;
+margin-bottom: 1rem;
+background-color: #fed7d7;
+border: 1px solid #f56565;
+color: #c53030;
+border-radius: 4px;
+font-size: 0.875rem;
+}
+
+.links {
+margin-top: 1.5rem;
+text-align: center;
+font-size: 0.875rem;
+}
+
+.links a {
+color: #3182ce;
+text-decoration: underline;
+}
+
+.inputError {
+border-color: #e53e3e !important;
+}
+
+.errorText {
+color: #e53e3e;
+font-size: 0.75rem;
+margin-top: 0.25rem;
+}
+
+/* Responsive tasarım için media query'ler */
+@media (max-width: 768px) {
+.formWrapper {
+  max-width: 90%;
+  padding: 1.5rem;
+}
+}
+
+@media (max-width: 480px) {
+.formWrapper {
+  max-width: 100%;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.inputGroup input {
+  font-size: 0.9rem;
+  padding: 0.6rem;
+}
+
+.submitButton {
+  padding: 0.6rem;
+}
+}

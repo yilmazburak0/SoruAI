@@ -1,0 +1,110 @@
+:root {
+  /* Ana renkler */
+  --color-primary: #3498db;
+  --color-primary-dark: #2980b9;
+  --color-secondary: #6c757d;
+  --color-secondary-dark: #5a6268;
+  --color-success: #28a745;
+  --color-success-light: #d4edda;
+  --color-success-dark: #155724;
+  --color-danger: #dc3545;
+  --color-danger-light: #f8d7da;
+  --color-danger-dark: #721c24;
+  --color-warning: #f39c12;
+  --color-info: #17a2b8;
+
+  /* Arka plan renkleri */
+  --bg-dark: #1a202c;
+  --bg-medium: #2d3748;
+  --bg-light: #f0f4f8; /* Daha yumuşak bir mavi-gri tonu */
+  --bg-white: #ffffff;
+
+  /* Yazı renkleri */
+  --text-dark: #333333;
+  --text-medium: #666666;
+  --text-light: #999999;
+  --text-white: #fafafa;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+div[data-nextjs-scroll-focus-boundary] {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr min(1440px, 94%) 1fr;
+  grid-template-rows: 96px auto 72px;
+}
+
+.container > * {
+  grid-column: 2;
+}
+
+.container > .fluid {
+  grid-column: 1 / -1;
+}
+
+/* Genel stil sınıfları */
+.bg-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+}
+
+.bg-medium {
+  background-color: var(--bg-medium);
+  color: var(--text-white);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.bg-white {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+}
+
+/* Buton stilleri */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--text-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.btn:disabled {
+  background-color: var(--text-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}

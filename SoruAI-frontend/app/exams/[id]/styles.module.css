@@ -1,0 +1,222 @@
+/* Base container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  position: relative;
+  font-size: 16px; /* Base font size for large screens */
+}
+
+/* Typography base styles */
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.container h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Progress information */
+.progressInfo {
+  margin: 20px 0;
+  color: #666;
+}
+
+/* Navigation buttons */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.buttonPrimary, .buttonSecondary {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.buttonPrimary {
+  background-color: #007bff;
+  color: white;
+}
+
+.buttonPrimary:hover {
+  background-color: #0069d9;
+}
+
+.buttonSecondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.buttonSecondary:hover {
+  background-color: #5a6268;
+}
+
+.buttonSecondary:disabled, .buttonPrimary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.warningMessage {
+  color: #dc3545;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Content wrapper for flexible layout */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 15px 0;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 992px) {
+  /* On larger screens, position the question nav on the right */
+  .container {
+    padding-right: 240px;
+  }
+  
+  .contentWrapper {
+    position: relative; /* For positioning the fixed questionNav */
+    
+  }
+}
+
+/* More responsive adjustments for medium screens */
+@media (max-width: 991px) {
+  .container {
+    max-width: 800px;
+    font-size: 15px; /* Slightly smaller base font size */
+  }
+  
+  .container h1 {
+    font-size: 1.8rem; /* 27px */
+  }
+  
+  .container h2 {
+    font-size: 1.4rem; /* 21px */
+  }
+  
+  .container h3 {
+    font-size: 1.15rem; /* 17.25px */
+  }
+  
+  .buttonPrimary, .buttonSecondary {
+    font-size: 0.95rem;
+  }
+}
+
+/* Smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    font-size: 14px; /* Smaller base font size */
+  }
+  
+  .container h1 {
+    font-size: 1.6rem; /* 22.4px */
+    margin-bottom: 15px;
+  }
+  
+  .container h2 {
+    font-size: 1.3rem; /* 18.2px */
+  }
+  
+  .container h3 {
+    font-size: 1.1rem; /* 15.4px */
+  }
+  
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navigation button {
+    width: 100%;
+  }
+  
+  .buttonPrimary, .buttonSecondary {
+    font-size: 0.9rem; /* 12.6px */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    font-size: 13px; /* Even smaller base font size */
+  }
+  
+  .container h1 {
+    font-size: 1.4rem; /* 18.2px */
+    margin-bottom: 12px;
+  }
+  
+  .container h2 {
+    font-size: 1.2rem; /* 15.6px */
+    margin-bottom: 10px;
+  }
+  
+  .container h3 {
+    font-size: 1.05rem; /* 13.65px */
+  }
+  
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navigation button {
+    width: 100%;
+    font-size: 0.85rem; /* 11.05px */
+    padding: 8px 16px;
+  }
+}
+
+/* Very small screens like older phones */
+@media (max-width: 320px) {
+  .container {
+    font-size: 12px; /* Smallest base font size */
+    padding: 8px;
+  }
+  
+  .container h1 {
+    font-size: 1.3rem; /* 15.6px */
+    margin-bottom: 10px;
+  }
+  
+  .container h2 {
+    font-size: 1.1rem; /* 13.2px */
+    margin-bottom: 8px;
+  }
+  
+  .buttonPrimary, .buttonSecondary {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
